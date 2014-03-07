@@ -1,6 +1,6 @@
-diff -ruN R-devel/src/library/utils/man/Rcov_start.Rd R-devel-cov/src/library/utils/man/Rcov_start.Rd
+diff -urN -x '.*' R-devel/src/library/utils/man/Rcov_start.Rd R-develcov/src/library/utils/man/Rcov_start.Rd
 --- R-devel/src/library/utils/man/Rcov_start.Rd	1970-01-01 01:00:00.000000000 +0100
-+++ R-devel-cov/src/library/utils/man/Rcov_start.Rd	2014-03-05 16:07:45.907596276 +0100
++++ R-develcov/src/library/utils/man/Rcov_start.Rd	2014-03-07 18:41:33.117646470 +0100
 @@ -0,0 +1,26 @@
 +% File src/library/utils/man/Rcov_start.Rd
 +% Part of the R package, http://www.R-project.org
@@ -28,9 +28,9 @@ diff -ruN R-devel/src/library/utils/man/Rcov_start.Rd R-devel-cov/src/library/ut
 +}
 +
 +\keyword{utilities}
-diff -ruN R-devel/src/library/utils/man/Rcov_stop.Rd R-devel-cov/src/library/utils/man/Rcov_stop.Rd
+diff -urN -x '.*' R-devel/src/library/utils/man/Rcov_stop.Rd R-develcov/src/library/utils/man/Rcov_stop.Rd
 --- R-devel/src/library/utils/man/Rcov_stop.Rd	1970-01-01 01:00:00.000000000 +0100
-+++ R-devel-cov/src/library/utils/man/Rcov_stop.Rd	2014-03-03 16:14:25.883440716 +0100
++++ R-develcov/src/library/utils/man/Rcov_stop.Rd	2014-03-07 18:41:33.117646470 +0100
 @@ -0,0 +1,20 @@
 +% File src/library/utils/man/Rcov_stop.Rd
 +% Part of the R package, http://www.R-project.org
@@ -52,9 +52,9 @@ diff -ruN R-devel/src/library/utils/man/Rcov_stop.Rd R-devel-cov/src/library/uti
 +  , named after the covered source file names. 
 +}
 +\keyword{utilities}
-diff -ruN R-devel/src/library/utils/NAMESPACE R-devel-cov/src/library/utils/NAMESPACE
+diff -urN -x '.*' R-devel/src/library/utils/NAMESPACE R-develcov/src/library/utils/NAMESPACE
 --- R-devel/src/library/utils/NAMESPACE	2013-09-10 03:04:59.000000000 +0200
-+++ R-devel-cov/src/library/utils/NAMESPACE	2014-03-03 16:18:48.407430952 +0100
++++ R-develcov/src/library/utils/NAMESPACE	2014-03-07 18:41:33.121646470 +0100
 @@ -1,7 +1,7 @@
  # Refer to all C routines by their name prefixed by C_
  useDynLib(utils, .registration = TRUE, .fixes = "C_")
@@ -64,9 +64,9 @@ diff -ruN R-devel/src/library/utils/NAMESPACE R-devel-cov/src/library/utils/NAME
         RSiteSearch, URLdecode, URLencode, View, adist, alarm, apropos,
         aregexec, argsAnywhere, assignInMyNamespace, assignInNamespace,
         as.roman, as.person, as.personList, as.relistable, aspell,
-diff -ruN R-devel/src/library/utils/R/Rcov.R R-devel-cov/src/library/utils/R/Rcov.R
+diff -urN -x '.*' R-devel/src/library/utils/R/Rcov.R R-develcov/src/library/utils/R/Rcov.R
 --- R-devel/src/library/utils/R/Rcov.R	1970-01-01 01:00:00.000000000 +0100
-+++ R-devel-cov/src/library/utils/R/Rcov.R	2014-03-03 16:08:45.739453368 +0100
++++ R-develcov/src/library/utils/R/Rcov.R	2014-03-07 18:41:33.121646470 +0100
 @@ -0,0 +1,27 @@
 +#  File src/library/utils/R/Rcov.R
 +#  Part of the R package, http://www.R-project.org
@@ -95,9 +95,9 @@ diff -ruN R-devel/src/library/utils/R/Rcov.R R-devel-cov/src/library/utils/R/Rco
 +Rcov_stop <- function() {
 +	invisible(.External(C_Rcov_stop))
 +}
-diff -ruN R-devel/src/library/utils/src/init.c R-devel-cov/src/library/utils/src/init.c
+diff -urN -x '.*' R-devel/src/library/utils/src/init.c R-develcov/src/library/utils/src/init.c
 --- R-devel/src/library/utils/src/init.c	2014-01-08 18:06:33.000000000 +0100
-+++ R-devel-cov/src/library/utils/src/init.c	2014-03-03 16:16:00.667437192 +0100
++++ R-develcov/src/library/utils/src/init.c	2014-03-07 18:41:33.129646469 +0100
 @@ -74,6 +74,8 @@
  static const R_ExternalMethodDef ExtEntries[] = {
      EXTDEF(download, 5),
@@ -107,9 +107,9 @@ diff -ruN R-devel/src/library/utils/src/init.c R-devel-cov/src/library/utils/src
      EXTDEF(Rprof, 8),
      EXTDEF(Rprofmem, 3),
  
-diff -ruN R-devel/src/library/utils/src/utils.c R-devel-cov/src/library/utils/src/utils.c
+diff -urN -x '.*' R-devel/src/library/utils/src/utils.c R-develcov/src/library/utils/src/utils.c
 --- R-devel/src/library/utils/src/utils.c	2012-10-01 17:52:17.000000000 +0200
-+++ R-devel-cov/src/library/utils/src/utils.c	2014-03-03 16:24:06.259419131 +0100
++++ R-develcov/src/library/utils/src/utils.c	2014-03-07 18:41:33.129646469 +0100
 @@ -27,6 +27,22 @@
  #include "utils.h"
  
@@ -133,9 +133,9 @@ diff -ruN R-devel/src/library/utils/src/utils.c R-devel-cov/src/library/utils/sr
  SEXP do_Rprof(SEXP args);
  
  SEXP Rprof(SEXP args)
-diff -ruN R-devel/src/library/utils/src/utils.h R-devel-cov/src/library/utils/src/utils.h
+diff -urN -x '.*' R-devel/src/library/utils/src/utils.h R-develcov/src/library/utils/src/utils.h
 --- R-devel/src/library/utils/src/utils.h	2014-01-06 03:04:59.000000000 +0100
-+++ R-devel-cov/src/library/utils/src/utils.h	2014-03-03 16:23:54.355419573 +0100
++++ R-develcov/src/library/utils/src/utils.h	2014-03-07 18:41:33.129646469 +0100
 @@ -26,6 +26,8 @@
  
  SEXP objectSize(SEXP s);
@@ -145,10 +145,10 @@ diff -ruN R-devel/src/library/utils/src/utils.h R-devel-cov/src/library/utils/sr
  SEXP Rprof(SEXP args);
  SEXP Rprofmem(SEXP args);
  
-diff -ruN R-devel/src/main/eval.c R-devel-cov/src/main/eval.c
+diff -urN -x '.*' R-devel/src/main/eval.c R-develcov/src/main/eval.c
 --- R-devel/src/main/eval.c	2014-02-21 03:03:36.000000000 +0100
-+++ R-devel-cov/src/main/eval.c	2014-03-05 16:32:22.427541357 +0100
-@@ -37,6 +37,201 @@
++++ R-develcov/src/main/eval.c	2014-03-07 18:41:33.133646469 +0100
+@@ -37,6 +37,202 @@
  
  static SEXP bcEval(SEXP, SEXP, Rboolean);
  
@@ -266,13 +266,14 @@ diff -ruN R-devel/src/main/eval.c R-devel-cov/src/main/eval.c
 +
 +	/* put the params nb_lines and growth_rate as hidden vars of the hashed env */
 +	R_Cov_freqs_hash = R_NewHashedEnv(R_NilValue, ScalarInteger(0));
++	R_PreserveObject(R_Cov_freqs_hash);
 +	PROTECT(sexp = ScalarInteger(nb_lines));
 +	defineVar(install(".nb_lines"), sexp, R_Cov_freqs_hash);
 +
 +	PROTECT(sexp = ScalarReal(growth_rate));
 +	defineVar(install(".growth_rate"), sexp, R_Cov_freqs_hash);
 +
-+	R_PreserveObject(R_Cov_freqs_hash);
++	UNPROTECT(2);
 +}
 +
 +/* Ends the code coverage tracing.
@@ -350,7 +351,7 @@ diff -ruN R-devel/src/main/eval.c R-devel-cov/src/main/eval.c
  /* BC_PROILFING needs to be defined here and in registration.c */
  /*#define BC_PROFILING*/
  #ifdef BC_PROFILING
-@@ -851,10 +1046,17 @@
+@@ -851,10 +1047,17 @@
  	&& length(srcrefs) > ind
  	&& !isNull(result = VECTOR_ELT(srcrefs, ind))
  	&& TYPEOF(result) == INTSXP
