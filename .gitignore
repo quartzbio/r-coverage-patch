@@ -1,0 +1,5 @@
+*~
+*.tar.gz
+R-*
+patch.txt
+testthat
