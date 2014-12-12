@@ -24,3 +24,12 @@ distclean:
 patch.txt: distclean $(RDIR)
 	rm -f patch.txt
 	diff -urN -x NEWS R-3.0.2 R-3.0.2cov > patch.txt || true
+
+LOCAL=$(PWD)/local
+
+install:
+	cd $(RCOV) && \
+	./configure  --prefix $(LOCAL) --enable-R-shlib --enable-memory-profiling --with-readline && \
+	make -j 4 && \
+	make install
+
