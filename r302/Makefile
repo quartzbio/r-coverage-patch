@@ -27,7 +27,8 @@ patch.txt: distclean $(RDIR)
 
 PREFIX=$(PWD)/local
 
-install: apply_production_patch
+
+install: 
 	cd $(RCOV) && \
 	./configure  --prefix $(PREFIX) --enable-R-shlib --enable-memory-profiling --with-readline && \
 	make -j 4 && \

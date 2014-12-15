@@ -1,7 +1,7 @@
 Binary files R-3.0.2/NEWS.pdf and R-3.0.2cov/NEWS.pdf differ
 diff -urN -x NEWS R-3.0.2/src/library/utils/man/Rcov_start.Rd R-3.0.2cov/src/library/utils/man/Rcov_start.Rd
 --- R-3.0.2/src/library/utils/man/Rcov_start.Rd	1970-01-01 01:00:00.000000000 +0100
-+++ R-3.0.2cov/src/library/utils/man/Rcov_start.Rd	2014-12-12 14:30:13.528520047 +0100
++++ R-3.0.2cov/src/library/utils/man/Rcov_start.Rd	2014-12-15 17:12:31.821829546 +0100
 @@ -0,0 +1,26 @@
 +% File src/library/utils/man/Rcov_start.Rd
 +% Part of the R package, http://www.R-project.org
@@ -31,7 +31,7 @@ diff -urN -x NEWS R-3.0.2/src/library/utils/man/Rcov_start.Rd R-3.0.2cov/src/lib
 +\keyword{utilities}
 diff -urN -x NEWS R-3.0.2/src/library/utils/man/Rcov_stop.Rd R-3.0.2cov/src/library/utils/man/Rcov_stop.Rd
 --- R-3.0.2/src/library/utils/man/Rcov_stop.Rd	1970-01-01 01:00:00.000000000 +0100
-+++ R-3.0.2cov/src/library/utils/man/Rcov_stop.Rd	2014-12-12 14:30:13.528520047 +0100
++++ R-3.0.2cov/src/library/utils/man/Rcov_stop.Rd	2014-12-15 17:12:31.821829546 +0100
 @@ -0,0 +1,20 @@
 +% File src/library/utils/man/Rcov_stop.Rd
 +% Part of the R package, http://www.R-project.org
@@ -55,7 +55,7 @@ diff -urN -x NEWS R-3.0.2/src/library/utils/man/Rcov_stop.Rd R-3.0.2cov/src/libr
 +\keyword{utilities}
 diff -urN -x NEWS R-3.0.2/src/library/utils/NAMESPACE R-3.0.2cov/src/library/utils/NAMESPACE
 --- R-3.0.2/src/library/utils/NAMESPACE	2013-08-27 00:05:04.000000000 +0200
-+++ R-3.0.2cov/src/library/utils/NAMESPACE	2014-12-12 14:30:13.532520047 +0100
++++ R-3.0.2cov/src/library/utils/NAMESPACE	2014-12-15 17:12:31.821829546 +0100
 @@ -1,7 +1,7 @@
  # Refer to all C routines by their name prefixed by C_
  useDynLib(utils, .registration = TRUE, .fixes = "C_")
@@ -67,7 +67,7 @@ diff -urN -x NEWS R-3.0.2/src/library/utils/NAMESPACE R-3.0.2cov/src/library/uti
         as.roman, as.person, as.personList, as.relistable, aspell,
 diff -urN -x NEWS R-3.0.2/src/library/utils/R/Rcov.R R-3.0.2cov/src/library/utils/R/Rcov.R
 --- R-3.0.2/src/library/utils/R/Rcov.R	1970-01-01 01:00:00.000000000 +0100
-+++ R-3.0.2cov/src/library/utils/R/Rcov.R	2014-12-12 14:30:13.532520047 +0100
++++ R-3.0.2cov/src/library/utils/R/Rcov.R	2014-12-15 17:12:31.821829546 +0100
 @@ -0,0 +1,27 @@
 +#  File src/library/utils/R/Rcov.R
 +#  Part of the R package, http://www.R-project.org
@@ -98,7 +98,7 @@ diff -urN -x NEWS R-3.0.2/src/library/utils/R/Rcov.R R-3.0.2cov/src/library/util
 +}
 diff -urN -x NEWS R-3.0.2/src/library/utils/src/init.c R-3.0.2cov/src/library/utils/src/init.c
 --- R-3.0.2/src/library/utils/src/init.c	2013-03-06 00:02:26.000000000 +0100
-+++ R-3.0.2cov/src/library/utils/src/init.c	2014-12-12 14:30:13.532520047 +0100
++++ R-3.0.2cov/src/library/utils/src/init.c	2014-12-15 17:12:31.821829546 +0100
 @@ -74,6 +74,8 @@
  static const R_ExternalMethodDef ExtEntries[] = {
      EXTDEF(download, 5),
@@ -110,7 +110,7 @@ diff -urN -x NEWS R-3.0.2/src/library/utils/src/init.c R-3.0.2cov/src/library/ut
  
 diff -urN -x NEWS R-3.0.2/src/library/utils/src/utils.c R-3.0.2cov/src/library/utils/src/utils.c
 --- R-3.0.2/src/library/utils/src/utils.c	2013-03-06 00:02:26.000000000 +0100
-+++ R-3.0.2cov/src/library/utils/src/utils.c	2014-12-12 14:30:13.532520047 +0100
++++ R-3.0.2cov/src/library/utils/src/utils.c	2014-12-15 17:12:31.821829546 +0100
 @@ -27,6 +27,22 @@
  #include "utils.h"
  
@@ -136,7 +136,7 @@ diff -urN -x NEWS R-3.0.2/src/library/utils/src/utils.c R-3.0.2cov/src/library/u
  SEXP Rprof(SEXP args)
 diff -urN -x NEWS R-3.0.2/src/library/utils/src/utils.h R-3.0.2cov/src/library/utils/src/utils.h
 --- R-3.0.2/src/library/utils/src/utils.h	2013-03-06 00:02:26.000000000 +0100
-+++ R-3.0.2cov/src/library/utils/src/utils.h	2014-12-12 14:30:13.532520047 +0100
++++ R-3.0.2cov/src/library/utils/src/utils.h	2014-12-15 17:12:31.821829546 +0100
 @@ -26,6 +26,8 @@
  
  SEXP objectSize(SEXP s);
@@ -148,7 +148,7 @@ diff -urN -x NEWS R-3.0.2/src/library/utils/src/utils.h R-3.0.2cov/src/library/u
  
 diff -urN -x NEWS R-3.0.2/src/main/eval.c R-3.0.2cov/src/main/eval.c
 --- R-3.0.2/src/main/eval.c	2013-07-28 00:05:03.000000000 +0200
-+++ R-3.0.2cov/src/main/eval.c	2014-12-12 14:30:13.536520047 +0100
++++ R-3.0.2cov/src/main/eval.c	2014-12-15 17:12:31.825829546 +0100
 @@ -37,6 +37,202 @@
  
  static SEXP bcEval(SEXP, SEXP, Rboolean);
@@ -376,7 +376,7 @@ diff -urN -x NEWS R-3.0.2/src/main/eval.c R-3.0.2cov/src/main/eval.c
  SEXP applyClosure(SEXP call, SEXP op, SEXP arglist, SEXP rho, SEXP suppliedenv)
 diff -urN -x NEWS R-3.0.2/src/main/version.c R-3.0.2cov/src/main/version.c
 --- R-3.0.2/src/main/version.c	2013-04-17 00:05:07.000000000 +0200
-+++ R-3.0.2cov/src/main/version.c	2014-12-12 17:34:40.168108440 +0100
++++ R-3.0.2cov/src/main/version.c	2014-12-15 17:12:31.825829546 +0100
 @@ -43,6 +43,10 @@
      Rprintf(_("Type 'demo()' for some demos, 'help()' for on-line help, or\n\
  'help.start()' for an HTML browser interface to help.\n\
@@ -390,7 +390,7 @@ diff -urN -x NEWS R-3.0.2/src/main/version.c R-3.0.2cov/src/main/version.c
  SEXP attribute_hidden do_version(SEXP call, SEXP op, SEXP args, SEXP env)
 diff -urN -x NEWS R-3.0.2/src/main/version.c~ R-3.0.2cov/src/main/version.c~
 --- R-3.0.2/src/main/version.c~	1970-01-01 01:00:00.000000000 +0100
-+++ R-3.0.2cov/src/main/version.c~	2013-04-17 00:05:07.000000000 +0200
++++ R-3.0.2cov/src/main/version.c~	2014-12-15 17:12:31.825829546 +0100
 @@ -0,0 +1,145 @@
 +/*
 + *  R : A Computer Language for Statistical Data Analysis
