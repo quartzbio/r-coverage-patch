@@ -18,7 +18,23 @@ To patch it manually:
  4. compile and install (make; make install)
 
 The project is organized in sudirectories per supported R version, e.g. r302 for R version 3.0.2.
-The above steps are somewhat automated using a Makefile (you need probably GNU make)
+The above steps are somewhat automated using a Makefile (you need probably GNU make).
+For example, to download, untar, patch, configure, make and install R-3.0.2:
+```bash
+git clone https://github.com/quartzbio/r-coverage-patch.git
+cd r-coverage-patch/r302/
+# download, untar and patch
+make apply_production_patch 
+# install in ./local/
+make install 
+# Or install in a custom place
+make install PREFIX=/whatever/
+
+# run it
+./local/bin/R
+
+```
+
 
 
 ## Implementation
@@ -26,9 +42,13 @@ I added a condition in the internal C function **getSrcref()**, that records the
 coverage is started (via Rcov_start()).
 The overhead should be minimal since for a given file, subsequent covered lines will be stored
 in constant time. 
-I use a hased env to store the occurrences by file.
+I use a hashed env to store the occurrences by file.
 
-I added two entry points in the utils package (Rcov_start() and Rcov_stop())
+I added two entry points in the utils package (**Rcov_start()** and **Rcov_stop()**)
+
+### viewing the main patched file: eval.c
+For convenience (Caution: it can be outdated), I included the main patched file in the repo, 
+you can view it here: https://github.com/quartzbio/r-coverage-patch/blob/master/r302/patched_files/eval.c
 
 ## Usage 
 (see also https://github.com/quartzbio/r-coverage-docker#usage).
