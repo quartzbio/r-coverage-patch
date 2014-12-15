@@ -6,6 +6,7 @@ PATCH=r302_coverage.patch
 
 .PHONY: patch.txt
 
+
 $(RDIR).tar.gz:
 	wget http://cran.r-project.org/src/base/R-3/$(RDIR).tar.gz 
 
@@ -17,7 +18,6 @@ apply_production_patch: $(RDIR)
 	patch -p0 < $(PATCH)
 	mv $(RDIR) $(RCOV)
 
-
 distclean:
 	-cd R-3.0.2cov && make distclean
 
@@ -25,11 +25,11 @@ patch.txt: distclean $(RDIR)
 	rm -f patch.txt
 	diff -urN -x NEWS R-3.0.2 R-3.0.2cov > patch.txt || true
 
-LOCAL=$(PWD)/local
+PREFIX=$(PWD)/local
 
-install:
+install: apply_production_patch
 	cd $(RCOV) && \
-	./configure  --prefix $(LOCAL) --enable-R-shlib --enable-memory-profiling --with-readline && \
+	./configure  --prefix $(PREFIX) --enable-R-shlib --enable-memory-profiling --with-readline && \
 	make -j 4 && \
 	make install
 
